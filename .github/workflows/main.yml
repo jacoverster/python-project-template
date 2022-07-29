@@ -10,18 +10,15 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ["3.7", "3.8", "3.9"]
 
     steps:
       - name: Checkout sources
         uses: actions/checkout@v3
 
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Set up Python 3.9
         uses: actions/setup-python@v4
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: '3.9'
 
       - name: Install dependencies
         run: |
@@ -30,7 +27,7 @@ jobs:
 
       - name: Test with pytest
         run: |
-          pytest+
+          pytest
 
       - name: Build wheel
         run: python -m build
