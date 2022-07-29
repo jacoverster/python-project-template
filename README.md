@@ -4,7 +4,7 @@ A Python project template repository.
 
 ## Features
 - [VS Code .devcontainer](https://code.visualstudio.com/docs/remote/containers) configuration that installs commonly used VS Code extensions.
-- [Dockerfile](https://docs.docker.com/engine/reference/builder/) with Python and the local package with "DEV" dependencies installed.
+- [Dockerfile](https://docs.docker.com/engine/reference/builder/) with Python and the local package with DEV dependencies installed.
 - [pyproject.toml package configuration](https://setuptools.pypa.io/en/latest/userguide/quickstart.html) with optional DEV and CI dependency lists.
 - [Pytest](https://github.com/boxed/pytest-readme) template setup with code [coverage](https://coverage.readthedocs.io/en/6.4.2/) reporting.
 - [Pre-commit hooks](https://pre-commit.com) configuration with excellent hooks for better code quality and safety.
