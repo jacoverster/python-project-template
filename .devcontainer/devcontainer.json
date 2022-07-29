@@ -9,6 +9,7 @@
         "ms-python.vscode-pylance",
         "ms-toolsai.jupyter",
         "ms-azuretools.vscode-docker",
+        "streetsidesoftware.code-spell-checker",
     ],
     "settings": {
         "terminal.integrated.defaultProfile.linux": "bash"
