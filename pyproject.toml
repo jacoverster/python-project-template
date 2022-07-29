@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "python_project_template"
+version = "0.0.1"
+description = "A Python project template."
+readme = "README.md"
+authors = [{name = "Jaco Verster", email = "versterrie@gmail.com"}]
+license = {file = "LICENSE"}
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "numpy",
+    "scipy",
+    "matplotlib",
+
+]
+requires-python = ">=3.9"
+
+[project.optional-dependencies]
+dev = ["pre-commit", "pytest", "black"]
+test = ["pytest"]
+
+[project.urls]
+Homepage = "http://lu-plm-actualitas.csir.co.za/tmm/tmm-path-generator"
