@@ -1,0 +1,26 @@
+image: python:3.9
+
+stages:
+  - test
+  - build
+
+before_script:
+  - pip install --upgrade pip
+
+test:
+  script:
+    - pip install .[test]
+    - pytest . --junitxml=test_report.xml
+  artifacts:
+    when: on_success
+    reports:
+      junit: test_report.xml
+
+build:
+  script:
+    - pip install build
+    - python -m build
+  artifacts:
+    when: on_success
+    paths:
+      - dist/*.whl

@@ -27,4 +27,4 @@ dev = ["pre-commit", "pytest", "black"]
 test = ["pytest"]
 
 [project.urls]
-Homepage = "http://lu-plm-actualitas.csir.co.za/tmm/tmm-path-generator"
+Homepage = "https://github.com/jacoverster/python-project-template"

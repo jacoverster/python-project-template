@@ -1,0 +1,18 @@
+# Byte-compiled / optimized / DLL files
+*__pycache__
+*.py[cod]
+*.pyc
+*.txt
+
+# Distribution / packaging
+*.egg-info/
+*PKG-INFO
+build/
+dist/
+
+# Unit test / coverage reports
+htmlcov/
+.pytest_cache
+*.coverage
+.coverage.*
+
