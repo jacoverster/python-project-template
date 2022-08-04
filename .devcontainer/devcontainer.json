@@ -14,4 +14,5 @@
     "settings": {
         "terminal.integrated.defaultProfile.linux": "bash"
     },
+    "remoteUser": "vscode"
 }
