@@ -1,18 +1,32 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.231.5/containers/docker-existing-dockerfile
 {
-    "name": "Python 3.10 project template",
-    "context": "..",
-    "dockerFile": "Dockerfile",
-    "extensions": [
-        "ms-python.python",
-        "ms-python.vscode-pylance",
-        "ms-toolsai.jupyter",
-        "ms-azuretools.vscode-docker",
-        "streetsidesoftware.code-spell-checker",
-    ],
-    "settings": {
-        "terminal.integrated.defaultProfile.linux": "bash"
-    },
-    "remoteUser": "vscode"
+	"name": "Python 3.10 project template",
+	"context": "..",
+	"dockerFile": "Dockerfile",
+	"settings": {
+		"terminal.integrated.defaultProfile.linux": "bash",
+		"python.defaultInterpreterPath": "/usr/local/bin/python",
+		"python.formatting.provider": "black",
+		"python.formatting.blackArgs": [
+			"--line-length",
+			"120"
+		],
+		"python.linting.enabled": true,
+		"python.linting.flake8Enabled": true,
+		"python.linting.flake8Args": [
+			"--max-line-length=120",
+			"--ignore=E203,E501,W503"
+		],
+		"python.testing.pytestEnabled": true,
+		"editor.formatOnSave": true,
+	},
+	"extensions": [
+		"ms-python.python",
+		"ms-python.vscode-pylance",
+		"ms-toolsai.jupyter",
+		"ms-azuretools.vscode-docker",
+		"streetsidesoftware.code-spell-checker",
+	],
+	"remoteUser": "vscode",
 }

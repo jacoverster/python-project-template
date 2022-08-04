@@ -1,10 +1,15 @@
 FROM python:3.10
 
-RUN pip install --upgrade pip
+ARG USERNAME=vscode
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
+
+RUN groupadd --gid $USER_GID $USERNAME \
+    && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME \
+    && pip install --upgrade pip
+
 COPY . .
 RUN pip install .[dev]
 RUN pre-commit install
 
-ENV PYTHONPATH "${PYTHONPATH}:/workspaces/python-project-template"
-
-CMD ["/bin/bash"]
+CMD ["bash"]
