@@ -29,7 +29,8 @@
 		"streetsidesoftware.code-spell-checker",
 	],
 	"remoteUser": "vscode",
-	"features": {
-		"github-cli": "latest",
-	}
+	// Add github-cli here if the container does not include it
+	// "features": {
+	// 	"github-cli": "latest",
+	// }
 }
