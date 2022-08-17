@@ -37,7 +37,7 @@ git push -u origin main
 To run pytest with code coverage
 
 ```bash
-coverage pytest
+coverage run -m pytest
 coverage report
 ```
 
