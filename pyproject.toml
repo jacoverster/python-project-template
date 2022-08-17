@@ -22,7 +22,7 @@ dependencies = [
 requires-python = ">=3.10"
 
 [project.optional-dependencies]
-dev = ["pytest", "coverage", "build", "black", "flake8", "pre-commit"]
+dev = ["pytest", "coverage", "build", "black", "isort", "flake8", "pre-commit"]
 ci = ["pytest", "coverage", "build"]
 
 [project.urls]

@@ -3,34 +3,37 @@
 {
 	"name": "Python 3.10 project template",
 	"context": "..",
-	"dockerFile": "Dockerfile",
-	"settings": {
-		"terminal.integrated.defaultProfile.linux": "bash",
-		"python.defaultInterpreterPath": "/usr/local/bin/python",
-		"python.formatting.provider": "black",
-		"python.formatting.blackArgs": [
-			"--line-length",
-			"120"
-		],
-		"python.linting.enabled": true,
-		"python.linting.flake8Enabled": true,
-		"python.linting.flake8Args": [
-			"--max-line-length=120",
-			"--ignore=E203,E501,W503"
-		],
-		"python.testing.pytestEnabled": true,
-		"editor.formatOnSave": true,
+    "dockerFile": "Dockerfile",
+    "settings": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.linting.enabled": true,
+        "python.linting.flake8Enabled": true,
+        "python.linting.flake8Args": [
+            "--max-line-length=120",
+            "--ignore=E203,E501,W503"
+        ],
+        "python.testing.pytestEnabled": true,
+        "terminal.integrated.defaultProfile.linux": "bash",
+    },
+    "isort.args":["--profile", "black"],
+    "extensions": [
+        "ms-python.python",
+        "ms-python.isort",
+        "ms-python.black-formatter",
+        "streetsidesoftware.code-spell-checker",
+        "njpwerner.autodocstring",
+        "mutable-ai.mutable-ai",
+    ],
+    "features": {
+		"git": {
+			"version": "os-provided"
+		}
 	},
-	"extensions": [
-		"ms-python.python",
-		"ms-python.vscode-pylance",
-		"ms-toolsai.jupyter",
-		"ms-azuretools.vscode-docker",
-		"streetsidesoftware.code-spell-checker",
-	],
-	"remoteUser": "vscode",
-	// Add github-cli here if the container does not include it
-	// "features": {
-	// 	"github-cli": "latest",
-	// }
+    "postCreateCommand": "pre-commit install",
+    "remoteUser": "vscode",
 }

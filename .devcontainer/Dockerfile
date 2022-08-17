@@ -10,8 +10,7 @@ RUN groupadd --gid $USER_GID $USERNAME \
     && pip install --upgrade pip
 
 COPY . .
-RUN pip install .[dev]
-RUN pre-commit install
+RUN pip install -e .[dev]
 
 ENV PYTHONPATH "${PYTHONPATH}:/workspaces/python-project-template"
 
