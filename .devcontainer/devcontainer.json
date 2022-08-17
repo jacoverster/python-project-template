@@ -12,6 +12,7 @@
         },
         "isort.args":["--profile", "black"],
         "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.formatting.provider": "none",
         "python.linting.enabled": true,
         "python.linting.flake8Enabled": true,
         "python.linting.flake8Args": [
