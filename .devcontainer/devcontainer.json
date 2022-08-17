@@ -10,6 +10,7 @@
         "editor.codeActionsOnSave": {
             "source.organizeImports": true
         },
+        "isort.args":["--profile", "black"],
         "python.defaultInterpreterPath": "/usr/local/bin/python",
         "python.linting.enabled": true,
         "python.linting.flake8Enabled": true,
@@ -20,7 +21,6 @@
         "python.testing.pytestEnabled": true,
         "terminal.integrated.defaultProfile.linux": "bash",
     },
-    "isort.args":["--profile", "black"],
     "extensions": [
         "ms-python.python",
         "ms-python.isort",
