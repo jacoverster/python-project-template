@@ -23,7 +23,7 @@ requires-python = ">=3.10"
 
 [project.optional-dependencies]
 dev = ["pytest", "coverage", "build", "black", "isort", "flake8", "pre-commit"]
-ci = ["pytest", "coverage", "build"]
+test = ["pytest", "coverage"]
 
 [project.urls]
 Homepage = "https://github.com/jacoverster/python-project-template"
