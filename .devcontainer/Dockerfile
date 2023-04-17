@@ -11,7 +11,7 @@ RUN groupadd --gid $USER_GID $USERNAME \
     && rm -rf /var/lib/apt/lists/*
 
 COPY . .
-RUN pip install --upgrade pip $$ pip install -e .[dev]
+RUN pip install --upgrade pip && pip install -e .[dev]
 
 ENV PYTHONPATH "${PYTHONPATH}:/workspaces/python-project-template"
 
