@@ -1,4 +1,4 @@
-FROM python:3.10
+FROM python:3.12
 
 ARG USERNAME=vscode
 ARG USER_UID=1000
@@ -10,9 +10,7 @@ RUN groupadd --gid $USER_GID $USERNAME \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-COPY . .
-RUN pip install --upgrade pip && pip install -e .[dev]
-
-ENV PYTHONPATH "${PYTHONPATH}:/workspaces/python-project-template"
+ENV PATH="/home/${USERNAME}/.local/bin:${PATH}"
+RUN pip install --upgrade pip
 
 CMD ["bash"]

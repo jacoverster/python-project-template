@@ -1,6 +1,6 @@
 // See https://containers.dev/implementors/json_reference/ for Dev Container metadata reference
 {
-	"name": "Python 3.10 project template",
+	"name": "Python 3.12 project template",
 	"build": {
 		"dockerfile": "Dockerfile",
         "context": ".."
@@ -8,38 +8,26 @@
     "customizations": {
         "vscode": {
             "settings": {
-                "editor.defaultFormatter": "ms-python.black-formatter",
+                "editor.defaultFormatter": "charliermarsh.ruff",
                 "editor.formatOnSave": true,
                 "editor.codeActionsOnSave": {
-                    "source.organizeImports": true
+                    "source.organizeImports": true,
+                    "source.fixAll": true
                 },
-                "isort.args":["--profile", "black"],
-                "python.defaultInterpreterPath": "/usr/local/bin/python",
-                "python.formatting.provider": "none",
-                "python.linting.enabled": true,
-                "python.linting.flake8Enabled": true,
-                "python.linting.pylintEnabled": false,
-                "python.linting.flake8Args": [
-                    "--max-line-length=120",
-                    "--ignore=E203,E501,W503"
-                ],
                 "python.testing.pytestEnabled": true,
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
                 "terminal.integrated.defaultProfile.linux": "bash"
             },
             "extensions": [
                 "ms-python.python",
-                "ms-python.black-formatter",
-                "ms-python.isort",
+                "ms-toolsai.jupyter",
+                "charliermarsh.ruff",
                 "streetsidesoftware.code-spell-checker",
-                "njpwerner.autodocstring",
                 "SonarSource.sonarlint-vscode",
                 "GitHub.copilot"
             ]
         }
     },
-    "features": {
-		"ghcr.io/devcontainers/features/github-cli:1": {}
-	},
-    "postCreateCommand": "pre-commit install",
+    "postCreateCommand": "pip install -e .[dev]",
     "remoteUser": "vscode"
 }

@@ -19,11 +19,28 @@ dependencies = [
     "matplotlib",
     "ipykernel",
 ]
-requires-python = ">=3.10"
+requires-python = ">=3.12"
 
 [project.optional-dependencies]
-dev = ["pytest", "coverage", "build", "black", "isort", "flake8", "pre-commit"]
+dev = ["pytest", "coverage", "ruff", "pre-commit", "rich"]
 test = ["pytest", "coverage"]
 
 [project.urls]
 Homepage = "https://github.com/jacoverster/python-project-template"
+
+[tool.ruff]
+src = ["src"]
+extend-include = ["*.ipynb"]
+select = [
+    "E",   # pycodestyle errors
+    "F",   # pyflakes
+    "I",   # isort
+    "C",   # flake8-comprehensions
+    "SIM", # flake8-simplify
+    "B",   # flake8-bugbear
+    "UP",  # pyupgrade
+]
+ignore = [
+    "E501", # line too long
+    "B008", # do not perform function calls in argument defaults
+]
