@@ -28,6 +28,6 @@
             ]
         }
     },
-    "postCreateCommand": "pip install -e .[dev]",
+    "postCreateCommand": "pip install -e .[dev] && pre-commit install",
     "remoteUser": "vscode"
 }
